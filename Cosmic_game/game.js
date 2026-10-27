@@ -193,9 +193,9 @@ function checkEmail(value) {
 function initIndex() {
   // Описание полей формы
   var fields = [
-    { id: 'fio', label: 'ФИО', type: 'text', auto: 'name', check: checkFio },
-    { id: 'phone', label: 'Номер телефона', type: 'tel', auto: 'tel', check: checkPhone },
-    { id: 'email', label: 'Почта', type: 'email', auto: 'email', check: checkEmail }
+    { id: 'fio', label: 'ФИО', type: 'text', hint: 'Иванов Иван Иванович', auto: 'name', check: checkFio },
+    { id: 'phone', label: 'Номер телефона', type: 'tel', hint: '+7 999 123-45-67', auto: 'tel', check: checkPhone },
+    { id: 'email', label: 'Почта', type: 'email', hint: 'name@example.com', auto: 'email', check: checkEmail }
   ];
 
   var fieldsHtml = '';
@@ -215,6 +215,7 @@ function initIndex() {
   if (game.step > 1 && !game.over) {
     html += '<a class="link" href="' + pages[game.step] + '.html">Продолжить игру</a>';
   }
+  html += '<a class="link" href="catalog.html">Арсенал миссии</a>';
   html += '</section>';
   app.innerHTML = html;
   $('#start').type = 'submit';
