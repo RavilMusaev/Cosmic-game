@@ -900,3 +900,91 @@ line {
   padding-left: 20px;
   line-height: 1.7;
 }
+
+
+/* ========================================
+   CRUD — управление каталогом снаряжения
+======================================== */
+
+.gear-manager {
+  margin: 25px 0;
+  padding: 20px;
+  background: #ffffff0c;
+  border: 1px solid #38f2ff55;
+  border-radius: 16px;
+}
+
+.gear-manager h2 {
+  color: var(--n);
+  margin-top: 0;
+}
+
+#gearForm {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  text-align: left;
+}
+
+#gearForm label {
+  font-weight: 600;
+  margin-top: 8px;
+}
+
+#gearForm input,
+#gearForm textarea {
+  width: 100%;
+  padding: 12px;
+  font: inherit;
+  color: #fff;
+  background: #0a0f3a;
+  border: 2px solid var(--n);
+  border-radius: 10px;
+}
+
+#gearForm textarea {
+  min-height: 90px;
+  resize: vertical;
+}
+
+#gearForm input:focus,
+#gearForm textarea:focus {
+  outline: none;
+  box-shadow: 0 0 12px #38f2ff88;
+}
+
+#gearForm .btn {
+  margin: 12px 0 0;
+}
+
+#cancelEdit {
+  margin-top: 8px;
+  padding: 10px;
+}
+
+.gear-actions {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-top: 12px;
+}
+
+.gear-actions button {
+  flex: 1;
+  min-width: 90px;
+}
+
+.delete-btn {
+  border-color: #ff6b81;
+  color: #ff9aaa;
+}
+
+.delete-btn:hover {
+  background: #be123c;
+  color: #fff;
+}
+
+#formMessage {
+  min-height: 22px;
+  margin-top: 12px;
+}

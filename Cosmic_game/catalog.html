@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="ru">
 <head>
@@ -10,16 +11,61 @@
   <main id="app">
     <section class="panel">
       <h1 class="title">Арсенал миссии</h1>
-      <p class="sub">Снаряжение для космической экспедиции. Нажми на карточку, чтобы увидеть подробности.</p>
+      <p class="sub">
+        Снаряжение для космической экспедиции.
+        Нажми на карточку, чтобы увидеть подробности.
+      </p>
+
+      <!-- Форма добавления и редактирования -->
+      <section class="gear-manager">
+        <h2>Управление снаряжением</h2>
+
+        <form id="gearForm">
+          <input type="hidden" id="gearId">
+
+          <label for="gearName">Название предмета:</label>
+          <input type="text" id="gearName" required>
+
+          <label for="gearCategory">Категория:</label>
+          <input type="text" id="gearCategory" required>
+
+          <label for="gearImage">Путь к изображению:</label>
+          <input type="text" id="gearImage" placeholder="images/gear1.jpg" required>
+
+          <label for="gearDescription">Описание:</label>
+          <textarea id="gearDescription" required></textarea>
+
+          <label for="gearSpecs">Характеристики (формат JSON):</label>
+          <textarea id="gearSpecs" required placeholder='{"Вес":"18 кг","Материал":"Углеволокно"}'></textarea>
+
+          <label for="gearPrice">Цена:</label>
+          <input type="number" id="gearPrice" min="0" required>
+
+          <button type="submit" class="btn" id="saveGear">
+            Добавить предмет
+          </button>
+
+          <button type="button" class="mini hidden" id="cancelEdit">
+            Отменить редактирование
+          </button>
+        </form>
+
+        <p id="formMessage" class="err"></p>
+      </section>
+
+      <h2>Каталог снаряжения</h2>
       <div id="gearList" class="catalog-grid"></div>
+
       <a class="link" href="index.html">← На главный экран</a>
     </section>
   </main>
 
-  <!-- Модальное окно с подробностями (Detail) -->
+  <!-- Модальное окно с подробностями -->
   <div id="detailSection" class="modal hidden">
     <div class="modal-box">
-      <button id="closeDetail" class="mini" aria-label="Закрыть">Закрыть ✕</button>
+      <button id="closeDetail" class="mini" aria-label="Закрыть">
+        Закрыть ✕
+      </button>
       <div id="detailCard"></div>
     </div>
   </div>
